@@ -53,14 +53,14 @@ listed below the colors available in this version of **Color** lib:
 
 | Text color   | Function       |
 | ------------ | -------------- |
-| Black        | `black(srt)`   |
-| Blue         | `blue(srt)`    |
-| Cyan         | `cyan(srt)`    |
-| Green        | `green(srt)`   |
-| Magenta      | `magenta(srt)` |
-| Red          | `red(srt)`     |
-| White        | `black(srt)`   |
-| Yellow       | `black(srt)`   |
+| Black        | `black(str)`   |
+| Blue         | `blue(str)`    |
+| Cyan         | `cyan(str)`    |
+| Green        | `green(str)`   |
+| Magenta      | `magenta(str)` |
+| Red          | `red(str)`     |
+| White        | `black(str)`   |
+| Yellow       | `black(str)`   |
 
 > **Important: ** The Color lib only colors text in the foreground. To use
 background colored texts, refer to the [Colorama](https://pypi.org/project/colorama/)
