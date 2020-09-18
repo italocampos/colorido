@@ -13,6 +13,27 @@ In a nutshell, use these functions by importing the `color` module and calling
 the functions in a print context.
 
 
+## Installation
+
+You can use this lib without installation. To do that, in a Terminal, install
+the Colorama lib by typing:
+
+``` Shell
+pip install colorama
+```
+
+After installed the Colorama lib, copy the file `color/color.py` to your
+project and use that with `import color`. All is ready!
+
+If you want to install it, you can do that easily by cloning this Github
+repository and installing it with `pade -e`. In a Terminal, type:
+
+``` Shell
+git clone git@github.com:italocampos/color.git
+pip install -e color
+```
+
+
 ## Usage
 
 To use the functions, download and import the lib within your code. After, just
