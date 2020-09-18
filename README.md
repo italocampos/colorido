@@ -22,11 +22,11 @@ the Colorama lib by typing:
 pip install colorama
 ```
 
-After installed the Colorama lib, copy the file `color/color.py` to your
+After installed the Colorama lib, copy the file `color.py` to your
 project and use that with `import color`. All is ready!
 
 If you want to install it, you can do that easily by cloning this Github
-repository and installing it with `pade -e`. In a Terminal, type:
+repository and installing it with `pip install -e`. In a Terminal, type:
 
 ``` Shell
 git clone git@github.com:italocampos/color.git
@@ -62,7 +62,7 @@ listed below the colors available in this version of **Color** lib:
 | White        | `black(str)`   |
 | Yellow       | `black(str)`   |
 
-> **Important: ** The Color lib only colors text in the foreground. To use
+> **Important:** The Color lib only colors text in the foreground. To use
 background colored texts, refer to the [Colorama](https://pypi.org/project/colorama/)
 lib or other.
 
@@ -75,7 +75,7 @@ Example 1:
 
 ``` Python
 import color
-text = color.yellow('BR') + color.green('AZ') + color.blue('IL')
+text = color.green('BR') + color.yellow('AZ') + color.blue('IL')
 print('Come visit %s.' % text)
 ```
 
@@ -89,7 +89,7 @@ print('sudo %s' % color.red('rm -rf /'))
 Example 3:
 ``` Python
 import color
-print('Is the zebra {black} with {white} stripes or {white} with {black} stripes?'.format(
+print('Is zebra {black} with {white} stripes or {white} with {black} stripes?'.format(
     black = color.black('BLACK'),
     white = color.white('WHITE'),
 ))
