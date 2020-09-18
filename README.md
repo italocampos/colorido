@@ -7,11 +7,10 @@ projects. You ever can make your logs prettier.
 ## About the lib
 
 This lib has a module that implements the gereral functions to color strings
-that are printed in the screen by the 'print' functions of Python 3.x. I used
-the default (Colorama)[https://pypi.org/project/colorama/] Python lib, so, you
-should be able to use the functions of this lib without download any other
-Python module. In a nutshell, use these funtions by importing the 'color'
-module and calling the funtions in a print context.
+that are printed in the screen by the 'print' functions of Python 3.x. This
+package depends on [Colorama](https://pypi.org/project/colorama/) Python lib.
+In a nutshell, use these functions by importing the `color` module and calling
+the functions in a print context.
 
 
 ## Usage
@@ -27,7 +26,7 @@ print('This is the color ' + color.red('red') + '.')
 
 ### Coloring
 
-You can choose among the available colors in the (Colorama)[https://pypi.org/project/colorama/]
+You can choose among the available colors in the [Colorama](https://pypi.org/project/colorama/)
 library to color the foreground of your texts. To make your life more easy, I
 listed below the colors available in this version of **Color** lib:
 
@@ -43,7 +42,7 @@ listed below the colors available in this version of **Color** lib:
 | Yellow       | `black(srt)`   |
 
 > **Important: ** The Color lib only colors text in the foreground. To use
-background colored texts, refer to the (Colorama)[https://pypi.org/project/colorama/]
+background colored texts, refer to the [Colorama](https://pypi.org/project/colorama/)
 lib or other.
 
 Remember that the colors above may vary according the configuration of your
@@ -78,7 +77,7 @@ print('Is the zebra {black} with {white} stripes or {white} with {black} stripes
 
 ### Styling
 
-The Color lib also support text styling, according the (Colorama)[https://pypi.org/project/colorama/]
+The Color lib also support text styling, according the [Colorama](https://pypi.org/project/colorama/)
 lib. The supported styles are three:
 
 - Dim text
@@ -144,4 +143,4 @@ search for other python libraries.
 
 ## License
 
-This lib is a free software and is distributed under the (MIT License)[https://opensource.org/licenses/MIT].
+This lib is a free software and is distributed under the [MIT License](https://opensource.org/licenses/MIT).
