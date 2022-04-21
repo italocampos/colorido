@@ -1,20 +1,15 @@
 '''
-Color module
+Color Module
 ------------
 
-This module implements gereral functions to color strings that are printed in
-the screen by the 'print' functions of Python 3.x. I used the default
-'colorama' Python lib, so, you should be able to use these functions without
-download any other Python module. To use these funtions, import the 'color'
-module and call the funtions in a print context.
+This module implements the general functions used to color your logs printed in
+the screen. To use these funtions, import the 'color' module and call the
+funtions in a print context.
 
-Dependencies:
-- colorama 0.4.3 (https://pypi.org/project/colorama/)
-
-@author: Italo Campos
+@author: @italocampos
 '''
 
-from colorama import Fore, Style
+import foreground, style as st
 
 
 def style(text, style = 'normal'):
@@ -40,11 +35,11 @@ def style(text, style = 'normal'):
     '''
 
     if style in ['d', 'dim']:
-        return f'{Style.DIM}{text}{Style.RESET_ALL}'.format(text = text)
+        return f'{st.DIM}{text}{st.RESET}'.format(text = text)
     elif style in ['n', 'normal']:
-        return f'{Style.NORMAL}{text}{Style.RESET_ALL}'.format(text = text)
+        return f'{st.NORMAL}{text}{st.RESET}'.format(text = text)
     elif style in ['b', 'bold']:
-        return f'{Style.BRIGHT}{text}{Style.RESET_ALL}'.format(text = text)
+        return f'{st.BRIGHT}{text}{st.RESET}'.format(text = text)
     else:
         raise(Exception('Unknown style.'))
 
@@ -66,7 +61,7 @@ def red(text_, style_ = 'normal'):
         The styled and colored text according the provided 'style_' parameter.
     '''
 
-    return f'{Fore.RED}' + '{text}'.format(text = style(text = text_, style = style_))
+    return f'{foreground.RED}' + '{text}'.format(text = style(text = text_, style = style_))
 
 
 def black(text_, style_ = 'normal'):
@@ -85,7 +80,7 @@ def black(text_, style_ = 'normal'):
         The styled and colored text according the provided 'style_' parameter.
     '''
 
-    return f'{Fore.BLACK}' + '{text}'.format(text = style(text = text_, style = style_))
+    return f'{foreground.BLACK}' + '{text}'.format(text = style(text = text_, style = style_))
 
 
 def green(text_, style_ = 'normal'):
@@ -104,7 +99,7 @@ def green(text_, style_ = 'normal'):
         The styled and colored text according the provided 'style_' parameter.
     '''
 
-    return f'{Fore.GREEN}' + '{text}'.format(text = style(text = text_, style = style_))
+    return f'{foreground.GREEN}' + '{text}'.format(text = style(text = text_, style = style_))
 
 
 def yellow(text_, style_ = 'normal'):
@@ -123,7 +118,7 @@ def yellow(text_, style_ = 'normal'):
         The styled and colored text according the provided 'style_' parameter.
     '''
 
-    return f'{Fore.YELLOW}' + '{text}'.format(text = style(text = text_, style = style_))
+    return f'{foreground.YELLOW}' + '{text}'.format(text = style(text = text_, style = style_))
 
 
 def blue(text_, style_ = 'normal'):
@@ -142,7 +137,7 @@ def blue(text_, style_ = 'normal'):
         The styled and colored text according the provided 'style_' parameter.
     '''
 
-    return f'{Fore.BLUE}' + '{text}'.format(text = style(text = text_, style = style_))
+    return f'{foreground.BLUE}' + '{text}'.format(text = style(text = text_, style = style_))
 
 
 def magenta(text_, style_ = 'normal'):
@@ -161,7 +156,7 @@ def magenta(text_, style_ = 'normal'):
         The styled and colored text according the provided 'style_' parameter.
     '''
 
-    return f'{Fore.MAGENTA}' + '{text}'.format(text = style(text = text_, style = style_))
+    return f'{foreground.MAGENTA}' + '{text}'.format(text = style(text = text_, style = style_))
 
 
 def cyan(text_, style_ = 'normal'):
@@ -180,7 +175,7 @@ def cyan(text_, style_ = 'normal'):
         The styled and colored text according the provided 'style_' parameter.
     '''
 
-    return f'{Fore.CYAN}' + '{text}'.format(text = style(text = text_, style = style_))
+    return f'{foreground.CYAN}' + '{text}'.format(text = style(text = text_, style = style_))
 
 
 def white(text_, style_ = 'normal'):
@@ -199,4 +194,4 @@ def white(text_, style_ = 'normal'):
         The styled and colored text according the provided 'style_' parameter.
     '''
 
-    return f'{Fore.WHITE}' + '{text}'.format(text = style(text = text_, style = style_))
+    return f'{foreground.WHITE}' + '{text}'.format(text = style(text = text_, style = style_))
