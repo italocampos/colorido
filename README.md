@@ -1,32 +1,17 @@
-# Color lib
+# PyTextColor lib
 
-A small Python 3.x lib to speed up the coloring usage throughout your Python
-projects. You ever can make your logs prettier.
+PyTextColor is a small Python 3.x lib to speed up the text coloring throughout
+your Python projects. You ever can make your logs prettier. ;)
 
-
-## About the lib
-
-This lib has a module that implements the gereral functions to color strings
-that are printed in the screen by the 'print' functions of Python 3.x. This
-package depends on [Colorama](https://pypi.org/project/colorama/) Python lib.
-In a nutshell, use these functions by importing the `color` module and calling
-the functions in a print context.
+This package is "as it is", and you don't need to install any dependencies to
+use it. In a nutshell, import the `color` module and call the functions in a
+print context to start coloring your strings.
 
 
 ## Installation
 
-You can use this lib without installation. To do that, in a Terminal, install
-the Colorama lib by typing:
-
-``` Shell
-pip install colorama
-```
-
-After installed the Colorama lib, copy the file `color.py` to your
-project and use that with `import color`. All is ready!
-
-If you want to install it, you can do that easily by cloning this Github
-repository and installing it with `pip install -e`. In a Terminal, type:
+Start cloning this GitHub repository and installing it with `pip install -e`.
+In a Terminal, type:
 
 ``` Shell
 git clone git@github.com:italocampos/color.git
@@ -36,8 +21,8 @@ pip install -e color
 
 ## Usage
 
-To use the functions, download and import the lib within your code. After, just
-call the function with the color you want to print. See the example below:
+To use the PyTextColor functions, import the lib in your code and just call the
+function with the color you want to print. See the example below:
 
 ``` Python
 import color
@@ -47,9 +32,7 @@ print('This is the color ' + color.red('red') + '.')
 
 ### Coloring
 
-You can choose among the available colors in the [Colorama](https://pypi.org/project/colorama/)
-library to color the foreground of your texts. To make your life more easy, I
-listed below the colors available in this version of **Color** lib:
+You can choose colors among the eight available options. The options are:
 
 | Text color   | Function       |
 | ------------ | -------------- |
@@ -62,21 +45,20 @@ listed below the colors available in this version of **Color** lib:
 | White        | `black(str)`   |
 | Yellow       | `black(str)`   |
 
-> **Important:** The Color lib only colors text in the foreground. To use
-background colored texts, refer to the [Colorama](https://pypi.org/project/colorama/)
-lib or other.
-
 Remember that the colors above may vary according the configuration of your
 Terminal or system.
 
-More examples of coloring:
+
+#### Basic examples
+
+Below we have some examples of PyTextColor usage.
 
 Example 1:
 
 ``` Python
 import color
 text = color.green('BR') + color.yellow('AZ') + color.blue('IL')
-print('Come visit %s.' % text)
+print('Come to visit %s.' % text)
 ```
 
 Example 2:
@@ -98,8 +80,7 @@ print('Is zebra {black} with {white} stripes or {white} with {black} stripes?'.f
 
 ### Styling
 
-The Color lib also support text styling, according the [Colorama](https://pypi.org/project/colorama/)
-lib. The supported styles are three:
+PyTextColor also support text styling. The supported styles are:
 
 - Dim text
 - Normal text
@@ -114,14 +95,19 @@ which is optional. The list with the parameters are below:
 | Normal     | `'n'` or `'normal'` (default) |
 | Bold       | `'b'` or `'bold'`             |
 
-In a practical way, you can style your text like:
+You can provide the `style` parameter as a second positional parameter in color
+functions or explicity provide the `style` parameter. In a practical way, you
+can do:
 
 Example 4:
 
 ``` Python
 import color
-print('This is the {text}.'.format(text = color.yellow('bold style', style_ = 'bold')))
+# Providing a explicity `style` parameter
+print('This is the {text}.'.format(text = color.yellow('bold style', style = 'bold')))
 # or simply
+print('This is the {text}.'.format(text = color.yellow('bold style', 'bold')))
+# or yet
 print('This is the {text}.'.format(text = color.yellow('bold style', 'b')))
 ```
 
@@ -129,37 +115,43 @@ Example 5:
 
 ``` Python
 import color
-print('Use {color} {lib}.'.format(
-    color = color.blue('Color', 'bold'),
-    lib = color.black('lib', 'dim'),
+print('PyTextColor {_is} {easy}.'.format(
+    _is = color.blue('is', 'bold'),
+    easy = color.black('easy', 'dim'),
 ))
 ```
 
-If you want, you can use only the style function, without color your text. See
-that:
+You can still, if you want, use only the `format` function to ignore color
+parameters and just style your text. See how:
 
 Example 6:
 
 ``` Python
 import color
-print('I {love} {linux}.'.format(
-    love = color.style('<3', 'dim'),
-    linux = color.style('Linux', 'bold'),
+print('{I} {love} {linux}.'.format(
+    I = color.style('I', 'bold')
+    love = color.red('<3', 'bold'),
+    linux = color.style('Linux', 'dim'),
 ))
 ```
+
+### Background color
+
+> Under construction.
 
 That's all folks!
 
 
 ## Who is this lib for?
 
-This lib is addressed to anyone who wants want a simple lib to print colored
-texts in the screen without a hundred of things to learn. You just need to 
-import the module and call the functions.
+PyTextColor is addressed to anyone who wants a simple lib to print colored
+texts in the screen without a hundred of things to learn. You just need to
+import the module and call the functions you want to.
 
-This lib doesn't match the programmers that want a full-featured lib. This lib
-just returns colored texts to be printed in the screen. If that is your case,
-search for other python libraries.
+PyTextColor doesn't match programmers that want a full-featured lib. It just
+returns colored texts to be printed in the screen. No things more. If this is
+your vibe, please, search for other python libraries (like colorama, or
+PyColor).
 
 
 ## License
