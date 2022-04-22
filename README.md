@@ -65,16 +65,18 @@ Example 2:
 
 ``` Python
 import color
-print('sudo %s' % color.red('rm -rf /'))
+print(f'sudo {color.red("rm -rf /")}')
 ```
 
 Example 3:
 ``` Python
 import color
-print('Is zebra {black} with {white} stripes or {white} with {black} stripes?'.format(
-    black = color.black('BLACK'),
-    white = color.white('WHITE'),
-))
+print(
+    'Is zebra {black} with {white} stripes or {white} with {black} stripes?'.format(
+        black=color.black('BLACK'),
+        white=color.white('WHITE'),
+    )
+)
 ```
 
 
@@ -104,21 +106,25 @@ Example 4:
 ``` Python
 import color
 # Providing a explicity `style` parameter
-print('This is the {text}.'.format(text = color.yellow('bold style', style = 'bold')))
+print(
+    'This is the {text}.'.format(text=color.yellow('bold style', style='bold'))
+)
 # or simply
-print('This is the {text}.'.format(text = color.yellow('bold style', 'bold')))
+print('This is the {text}.'.format(text=color.yellow('bold style', 'bold')))
 # or yet
-print('This is the {text}.'.format(text = color.yellow('bold style', 'b')))
+print('This is the {text}.'.format(text=color.yellow('bold style', 'b')))
 ```
 
 Example 5:
 
 ``` Python
 import color
-print('PyTextColor {_is} {easy}.'.format(
-    _is = color.blue('is', 'bold'),
-    easy = color.black('easy', 'dim'),
-))
+print(
+    'PyTextColor {_is} {easy}.'.format(
+        _is=color.blue('is', 'bold'),
+        easy=color.black('easy', 'dim'),
+    )
+)
 ```
 
 You can still, if you want, use only the `format` function to ignore color
@@ -128,11 +134,13 @@ Example 6:
 
 ``` Python
 import color
-print('{I} {love} {linux}.'.format(
-    I = color.style('I', 'bold')
-    love = color.red('<3', 'bold'),
-    linux = color.style('Linux', 'dim'),
-))
+print(
+    '{I} {love} {linux}.'.format(
+        I=color.style('I', 'bold')
+        love=color.red('<3', 'bold'),
+        linux=color.style('Linux', 'dim'),
+    )
+)
 ```
 
 ### Background color
