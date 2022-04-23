@@ -9,9 +9,9 @@ funtions in a print context.
 @author: @italocampos
 '''
 
-import background as bg
-import foreground as fg
-import style as st
+from colorido import background as bg
+from colorido import foreground as fg
+from colorido import style as st
 
 
 def set_foreground(text: str, color: str, style: str, bg: str):
