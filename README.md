@@ -19,8 +19,8 @@ Start cloning this GitHub repository and installing it with `pip install -e`.
 In a Terminal, type:
 
 ``` Shell
-git clone git@github.com:italocampos/color.git
-pip install -e color
+git clone git@github.com:italocampos/colorido.git
+pip install -e colorido
 ```
 
 
