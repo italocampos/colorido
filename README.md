@@ -1,11 +1,16 @@
-# PyTextColor lib
+# Colorido
 
-PyTextColor is a small Python 3.x lib to speed up the text coloring throughout
+Colors for terminal without weird code.
+
+
+## Description
+
+Colorido is a small Python 3.x lib to speed up the text coloring throughout
 your Python projects. You ever can make your logs prettier. ;)
 
 This package is "as it is", and you don't need to install any dependencies to
-use it. In a nutshell, import the `color` module and call the functions in a
-print context to start coloring your strings.
+use it. In a nutshell, import the `color` module from `colorido` lib and call
+the functions in a print context to start coloring your strings.
 
 
 ## Installation
@@ -21,11 +26,11 @@ pip install -e color
 
 ## Usage
 
-To use the PyTextColor functions, import the lib in your code and just call the
+To use the Colorido functions, import the lib in your code and just call the
 function with the color you want to print. See the example below:
 
 ``` Python
-import color
+from colorido import color
 
 print('This is the color ' + color.red('red') + '.')
 ```
@@ -44,20 +49,20 @@ You can choose colors among the eight available options. The options are:
 | Magenta      | `magenta(str)` |
 | Red          | `red(str)`     |
 | White        | `white(str)`   |
-| Yellow       | `yellow(str)`   |
+| Yellow       | `yellow(str)`  |
 
-Remember that the colors above may vary according the configuration of your
-Terminal or system.
+Remember that the colors above may vary according with the configuration of
+your Terminal or system.
 
 
 #### Basic examples
 
-Below we have some examples of PyTextColor usage.
+Below we have some examples of Colorido's usage.
 
 Example 1:
 
 ``` Python
-import color
+from colorido import color
 
 text = color.green('BR') + color.yellow('AZ') + color.blue('IL')
 print('Come to visit %s.' % text)
@@ -66,14 +71,14 @@ print('Come to visit %s.' % text)
 Example 2:
 
 ``` Python
-import color
+from colorido import color
 
 print(f'sudo {color.red("rm -rf /")}')
 ```
 
 Example 3:
 ``` Python
-import color
+from colorido import color
 
 print(
     'Is zebra {black} with {white} stripes or {white} with {black} stripes?'.format(
@@ -86,7 +91,7 @@ print(
 
 ### Styling
 
-PyTextColor also support text styling. The supported styles are:
+Colorido also support text styling. The supported styles are:
 
 - Dim text
 - Normal text
@@ -108,7 +113,7 @@ can do:
 Example 4:
 
 ``` Python
-import color
+from colorido import color
 
 # Providing a explicity `style` parameter
 print(
@@ -123,10 +128,10 @@ print('This is the {text}.'.format(text=color.yellow('bold style', 'b')))
 Example 5:
 
 ``` Python
-import color
+from colorido import color
 
 print(
-    'PyTextColor {_is} {easy}.'.format(
+    'Colorido {_is} {easy}.'.format(
         _is=color.blue('is', 'bold'),
         easy=color.black('easy', 'dim'),
     )
@@ -139,7 +144,7 @@ parameters and just style your text. See how:
 Example 6:
 
 ``` Python
-import color
+from colorido import color
 
 print(
     '{I} {love} {linux}.'.format(
@@ -160,7 +165,7 @@ provide a `bg` parameter to any color function with the color name you want.
 Example 7:
 
 ``` Python
-import color
+from colorido import color
 
 print(
     'The sun rules the {day} and the moon rules the {night}.'.format(
@@ -192,7 +197,7 @@ while choose your background color. See another example.
 Example 8:
 
 ``` Python
-import color
+from colorido import color
 
 print(
     'The {white} {light} can split in a beautiful {ra}{i}{n}{b}{o}{w}.'.format(
@@ -208,19 +213,18 @@ print(
 )
 ```
 
-
-That's all folks!
+That's all folks! If you have any doubts, feel free to reach me at [e-mail](mailto:italo.ramon.campos@gmail.com).
 
 
 ## Who is this lib for?
 
-PyTextColor is addressed to anyone who wants a simple lib to print colored
+Colorido is addressed to anyone who wants a simple lib to print colored
 texts in the screen without a hundred of things to learn. You just need to
 import the module and call the functions you want to.
 
-PyTextColor doesn't match programmers that want a full-featured lib. It just
+Colorido doesn't match programmers that want a full-featured lib. It just
 returns colored texts to be printed in the screen. No things more. If this is
-your vibe, please, search for other python libraries (like colorama, or
+your vibe, please, search for other python libraries (like colorama, colored or
 PyColor).
 
 
