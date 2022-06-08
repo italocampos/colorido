@@ -1,6 +1,6 @@
 # Colorido
 
-Colors for terminal without weird code.
+Colors for Terminal without weird code.
 
 
 ## Description
@@ -8,26 +8,25 @@ Colors for terminal without weird code.
 Colorido is a small Python 3.x lib to speed up the text coloring throughout
 your Python projects. You ever can make your logs prettier. ;)
 
-This package is "as it is", and you don't need to install any dependencies to
-use it. In a nutshell, import the `color` module from `colorido` lib and call
-the functions in a print context to start coloring your strings.
+You don't need to install any dependency to use colorido. In a nutshell, just
+import the `color` module from the `colorido` package and call the functions
+in a print context to start coloring your strings.
 
 
 ## Installation
 
-Start cloning this GitHub repository and installing it with `pip install -e`.
-In a Terminal, type:
+Install it with pip by running:
 
 ``` Shell
-git clone git@github.com:italocampos/colorido.git
-pip install -e colorido
+pip install colorido
 ```
 
 
 ## Usage
 
-To use the Colorido functions, import the lib in your code and just call the
-function with the color you want to print. See the example below:
+To use the colorido abilities, import the `color` module in your code and just
+call the function with the color you want to print. See how in the example
+below:
 
 ``` Python
 from colorido import color
@@ -38,7 +37,8 @@ print('This is the color ' + color.red('red') + '.')
 
 ### Coloring
 
-You can choose colors among the eight available options. The options are:
+You can choose the color you want among the eight available color options. The
+supported options are:
 
 | Text color   | Function       |
 | ------------ | -------------- |
@@ -51,13 +51,13 @@ You can choose colors among the eight available options. The options are:
 | White        | `white(str)`   |
 | Yellow       | `yellow(str)`  |
 
-Remember that the colors above may vary according with the configuration of
+> ℹ️ **Note:** the visual colors may vary according with the configuration of
 your Terminal or system.
 
 
 #### Basic examples
 
-Below we have some examples of Colorido's usage.
+Below we have some examples of colorido's general usage.
 
 Example 1:
 
@@ -91,14 +91,36 @@ print(
 
 ### Styling
 
-Colorido also support text styling. The supported styles are:
+Colorido also support text styling. The styles modify the heavy of the text.
+The supported styles are:
 
 - Dim text
 - Normal text
 - Bold text
 
-You can style your text by passing an extra parameter to the color functions,
-which is optional. The list with the parameters are below:
+You can style your text by passing an extra optional `style` parameter to the
+color functions. For example, to get a bold red text, you can do:
+
+Example 4:
+
+``` Python
+from colorido import color
+
+print(color.red('STOP', style='bold'), 'deploys at friday!')
+```
+
+You can also omit the `style` keyword and pass the style parameter just like a
+positional parameter.
+
+Example 5:
+
+``` Python
+from colorido import color
+
+print(color.magenta('Dimmed', 'dim'), 'texts are calm.')
+```
+
+Colorido supports three types of text styling.
 
 | Text style | Parameter                     |
 | ---------- | ----------------------------- |
@@ -106,40 +128,9 @@ which is optional. The list with the parameters are below:
 | Normal     | `'n'` or `'normal'` (default) |
 | Bold       | `'b'` or `'bold'`             |
 
-You can provide the `style` parameter as a second positional parameter in color
-functions or explicity provide the `style` parameter. In a practical way, you
-can do:
-
-Example 4:
-
-``` Python
-from colorido import color
-
-# Providing a explicity `style` parameter
-print(
-    'This is the {text}.'.format(text=color.yellow('bold style', style='bold'))
-)
-# or simply
-print('This is the {text}.'.format(text=color.yellow('bold style', 'bold')))
-# or yet
-print('This is the {text}.'.format(text=color.yellow('bold style', 'b')))
-```
-
-Example 5:
-
-``` Python
-from colorido import color
-
-print(
-    'Colorido {_is} {easy}.'.format(
-        _is=color.blue('is', 'bold'),
-        easy=color.black('easy', 'dim'),
-    )
-)
-```
-
-You can still, if you want, use only the `font` function to ignore color
-parameters and just style your text. See how:
+If you don't want to color your text, you can use the `font()` function to skip
+the text coloring. For this, provide the desired style parameter just like you
+do in the coloring functions. See how:
 
 Example 6:
 
@@ -159,8 +150,8 @@ print(
 
 > New in version 1.0.0!
 
-You can also color the background of your logs! To accomplish this, just
-provide a `bg` parameter to any color function with the color name you want.
+You can also color the background of your logs! Just provide a `bg` parameter
+to any color function with the name of the color you want.
 
 Example 7:
 
@@ -169,14 +160,14 @@ from colorido import color
 
 print(
     'The sun rules the {day} and the moon rules the {night}.'.format(
-        day=color.yellow('day', bg='white')
+        day=color.yellow('day', bg='white'),
         night=color.blue('night', bg='black'),
     )
 )
 ```
 
-The available colors are the same eight available to the text colors. We're
-going to place a list with these color options below:
+The available background colors are the same eight available in the foreground
+text colors. Below you have a list with the color options:
 
 | Background color | Parameter   |
 | ---------------- | ----------- |
@@ -190,9 +181,9 @@ going to place a list with these color options below:
 | Yellow           | `'yellow'`  |
 
 
-If you want to use just the background color with no text color, just call the
-`font` function, providing the `bg` parameter. You can also style the text
-while choose your background color. See another example.
+If you want to use just the background color, with no foreground text color,
+you can call again the `font()` function, providing the `bg` parameter. For
+example:
 
 Example 8:
 
@@ -200,8 +191,26 @@ Example 8:
 from colorido import color
 
 print(
+    'If your {code} have many {bugs}, you propably need more {coffee}.'.format(
+        code=color.font('code', bg='blue'),
+        bugs=color.font('bugs', bg='red'),
+        coffee=color.font('coffee', bg='black'),
+    )
+)
+```
+
+You can also style your text while you choose your background color, just like we
+have done in [styling section](#styling). See an example:
+
+Example 9:
+
+``` Python
+from colorido import color
+
+print(
     'The {white} {light} can split in a beautiful {ra}{i}{n}{b}{o}{w}.'.format(
-        white=color.font('white', bg='white'),
+        # We can style and also background our text with font() function
+        white=color.font('white', 'bold', bg='white'),
         light=color.font('light', 'bold', bg='black'),
         ra=color.red('ra'),
         i=color.yellow('i'),
@@ -213,7 +222,7 @@ print(
 )
 ```
 
-That's all folks! If you have any doubts, feel free to reach me at [e-mail](mailto:italo.ramon.campos@gmail.com).
+That's all folks! Bugs, questions or coffees, feel free to reach me in my [e-mail](mailto:italo.ramon.campos@gmail.com).
 
 
 ## Who is this lib for?
@@ -223,8 +232,8 @@ texts in the screen without a hundred of things to learn. You just need to
 import the module and call the functions you want to.
 
 Colorido doesn't match programmers that want a full-featured lib. It just
-returns colored texts to be printed in the screen. No things more. If this is
-your vibe, please, search for other python libraries (like colorama, colored or
+returns colored texts to be printed in the screen. No things more. If this is not
+your vibe, consider search for other python libraries (like colorama, colored or
 PyColor).
 
 
