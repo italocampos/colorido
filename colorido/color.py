@@ -244,7 +244,8 @@ def magenta(text, style='normal', bg=None):
     Returns
     -------
     str
-        The styled and colored text according with the provided parameters.    '''
+        The styled and colored text according with the provided parameters.
+    '''
 
     return set_foreground(text=text, color=fg.MAGENTA, style=style, bg=bg)
 
